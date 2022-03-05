@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Prime{
+	private static boolean isPrime(int n){
+		int i;
+		boolean b=true;
+		//loop till square root of n to reduce iterations
+		for(i=2;i<=n/i;i++)
+			if(n%i==0){
+				b=false;//returns false if n is divisible by even one number
+				break;
+			}
+		return b;//returns true when if-block isn't executed at all
+	}
+	public static void main(String[] s){
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter number to check: ");
+		int n=sc.nextInt();
+		if(isPrime(n))
+			System.out.println(n+" is a Prime Number");
+		else
+			System.out.println(n+" is not a Prime Number");
+	}
+}
