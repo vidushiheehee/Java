@@ -1,0 +1,56 @@
+import java.util.Scanner;
+class Matrices
+{
+	private static int i,j;
+	private static void input(int[][] arr)
+	{
+		Scanner sc=new Scanner(System.in);
+		for(i=0;i<3;i++)
+		{
+			System.out.print("Row "+(i+1)+": ");
+			for(j=0;j<3;j++)
+				arr[i][j]=sc.nextInt();
+		}
+	}
+	private static void display(int[][] arr)
+	{
+		for(i=0;i<3;i++)
+		{
+			for(j=0;j<3;j++)
+				System.out.print(arr[i][j]+"\t");
+			System.out.println();
+		}
+	}
+	public static void main(String[] args)
+	{
+		//creating all arrays required
+		int a[][]=new int[3][3];
+		int b[][]=new int[3][3];
+		int sum[][]=new int[3][3];
+		int pro[][]=new int[3][3];
+		//taking input into two matrices
+		System.out.println("Enter the elements of the first 3x3 matrix");
+		input(a);
+		System.out.println("Enter the elements of the second 3x3 matrix");
+		input(b);
+		//print both matrices with user input
+		System.out.println("Matrix I:");
+		display(a);
+		System.out.println("Matrix II:");
+		display(b);
+		//adding the two matrices
+		for(i=0;i<3;i++)
+			for(j=0;j<3;j++)
+				sum[i][j]=a[i][j]+b[i][j];
+		System.out.println("Matrix Addition I+II:");
+		display(sum);
+		//multiplying the two matrices, a[][]*b[][]
+		int k;
+		for(i=0;i<3;i++)
+			for(j=0;j<3;j++)
+				for(k=0;k<3;k++)
+					pro[i][j]+=a[i][k]*b[k][j];
+		System.out.println("Matrix Multiplication I*II:");
+		display(pro);
+	}
+}
