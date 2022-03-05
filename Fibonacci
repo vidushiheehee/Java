@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class Fibonacci{
+	public static void main(String[] s){
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter number of fibonacci terms to print: ");
+		int n=sc.nextInt();
+		System.out.println("Fibonacci series up till "+n+" terms");
+		int a=0,b=1,i;
+		for(i=1;i<=n;i++){
+			System.out.print(a+"\t");
+			b=a+b;
+			a=b-a;
+		}
+	}
+}
+			
