@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class Employee
+{
+	private String name,year,adrs;
+	private int slry;
+	Employee()//default constructor
+	{
+		name="";
+		year="";
+		slry=0;
+		adrs="";
+	}		
+	public void input(int i)//user input for instance variables
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the details of employee "+i+":");
+		System.out.print("Name: ");
+		name=sc.nextLine();
+		System.out.print("Year: ");
+		year=sc.next();
+		System.out.print("Salary: ");
+		slry=sc.nextInt();
+		System.out.print("Address: ");
+		adrs=sc.nextLine();
+		adrs=sc.nextLine();
+	}			
+	public void display(int i)//displays content of instance variables
+	{
+		System.out.println(i+".\t"+name+"\t"+year+"\t"+slry+"\t"+adrs);
+	}
+}
+
+class Demo1
+{
+	public static void main(String[] s)
+	{
+		//creating objects
+		Employee emp1=new Employee();
+		Employee emp2=new Employee();
+		Employee emp3=new Employee();
+		//taking user input
+		emp1.input(1);
+		emp2.input(2);
+		emp3.input(3);
+		//displaying the details
+		System.out.println("\tName\tYear\tSalary\tAddress");
+		emp1.display(1);
+		emp2.display(2);
+		emp3.display(3);
+	}
+}
